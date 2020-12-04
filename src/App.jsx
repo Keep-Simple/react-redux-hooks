@@ -1,22 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+
+import { store } from './store'
+
+import Header from './Header'
+import Footer from './Footer'
+import UserDetails from './UserDetails'
+import UserTable from './UserTable'
+import WrongPage from './WrongPage'
 
 function App() {
-    // Create the count state.
-    const [count, setCount] = useState(0)
-    // Create the counter (+1 every second).
-    useEffect(() => {
-        const timer = setTimeout(() => setCount(count + 1), 1000)
-        return () => clearTimeout(timer)
-    }, [count, setCount])
-    // Return the App component.
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Page has been open for <code>{count}</code> seconds.
-                </p>
-            </header>
-        </div>
+        <Provider {...{ store }}>
+            <Router>
+                <main>
+                    <Header />
+
+                    <Switch>
+                        <Route path="/" exact>
+                            <UserTable />
+                        </Route>
+                        <Route path="/user/:id">
+                            <UserDetails />
+                        </Route>
+
+                        <Route path="/">
+                            <WrongPage />
+                        </Route>
+                    </Switch>
+
+                    <Footer />
+                </main>
+            </Router>
+        </Provider>
     )
 }
 
