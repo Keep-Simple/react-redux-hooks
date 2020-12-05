@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import { store } from './store'
+import { store } from './store/store'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -22,6 +22,7 @@ function App() {
                         <Route path="/" exact>
                             <UserTable />
                         </Route>
+
                         <Route path="/user/:id">
                             <UserDetails />
                         </Route>

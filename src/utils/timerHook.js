@@ -5,7 +5,7 @@ export function useTimer() {
 
     useEffect(() => {
         const calcTime = () =>
-            setTime(new Date().toLocaleTimeString().slice(0, 7))
+            setTime(new Date().toLocaleTimeString().slice(0, 8))
 
         const interval = setInterval(calcTime, 250)
         return () => clearInterval(interval)
