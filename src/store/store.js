@@ -17,8 +17,9 @@ const mainSlice = createSlice({
         },
         usersReceived(state, { payload }) {
             payload.forEach((user) => {
-                state.users[user.id.value] = user
+                state.users[user.login.uuid] = user
             })
+            state.loading = false
         },
         usersLoadingError(state, { payload }) {
             state.error = payload

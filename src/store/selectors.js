@@ -14,3 +14,5 @@ export const selectCountSelectedUsers = createSelector(
     selectSelectedUsers,
     (selectedUsers) => selectedUsers.length
 )
+
+export const selectLoading = (state) => state.loading
