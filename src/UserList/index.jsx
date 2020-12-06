@@ -1,23 +1,37 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import UserCard from '../UserCard'
 
-export default function UserList({ users }) {
+export default function UserList({ users, selectUser }) {
+    const history = useHistory()
+    const handleUserNav = (id) => history.push(`/user/${id}`)
+
     return (
         <div>
-            {users.map(({ login: { uuid }, name, picture: { thumbnail } }) => (
-                <Link to={`/user/${uuid}`} key={uuid}>
+            {users.map(
+                ({
+                    login: { uuid },
+                    name,
+                    picture: { thumbnail },
+                    selectTime,
+                }) => (
                     <UserCard
+                        key={uuid}
                         id={uuid}
                         avatar={thumbnail}
                         firstName={name.first}
                         lastName={name.last}
-                        // onButtonClick={}
+                        selectTime={selectTime}
+                        onButtonClick={(e) => {
+                            e.stopPropagation()
+                            selectUser(uuid)
+                        }}
+                        onCardClick={() => handleUserNav(uuid)}
                     />
-                </Link>
-            ))}
+                )
+            )}
         </div>
     )
 }

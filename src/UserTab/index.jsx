@@ -3,14 +3,14 @@ import React from 'react'
 import { useSearchInput } from '../utils/searchHook'
 import UserList from '../UserList'
 
-export default function UserTab({ users }) {
+export default function UserTab({ users, selectUser }) {
     const { filteredItems, ...handlers } = useSearchInput(users, filterFunc)
 
     return (
         <section>
             <input {...handlers} />
 
-            <UserList users={filteredItems} />
+            <UserList users={filteredItems} selectUser={selectUser} />
         </section>
     )
 }

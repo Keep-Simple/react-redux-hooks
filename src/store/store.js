@@ -7,6 +7,7 @@ const mainSlice = createSlice({
     name: 'main',
     initialState: {
         users: {},
+        selectedIds: [],
         loading: false,
         error: '',
     },
@@ -24,6 +25,19 @@ const mainSlice = createSlice({
         usersLoadingError(state, { payload }) {
             state.error = payload
         },
+        toggleUserSelect(state, { payload: id }) {
+            const user = state.users[id]
+            const ids = state.selectedIds
+            const index = ids.indexOf(id)
+
+            if (index !== -1) {
+                ids.splice(index, 1)
+                user.selectTime = null
+            } else {
+                ids.push(id)
+                user.selectTime = new Date().toLocaleDateString()
+            }
+        },
     },
 })
 
@@ -40,6 +54,7 @@ export const {
     usersLoading,
     usersReceived,
     usersLoadingError,
+    toggleUserSelect,
 } = mainSlice.actions
 
 sagaMiddleware.run(rootSaga)
