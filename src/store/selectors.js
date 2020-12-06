@@ -5,6 +5,8 @@ export const selectUsers = createSelector(
     (users) => Object.values(users)
 )
 
+export const selectUser = (state, id) => state.users[id]
+
 export const selectSelectedUsers = (state) =>
     state.selectedIds.map((id) => state.users[id])
 

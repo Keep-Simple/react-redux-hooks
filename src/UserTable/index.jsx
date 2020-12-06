@@ -42,7 +42,9 @@ export default function UserTable() {
 
             {isLoading && <Loader />}
 
-            <button onClick={() => dispatch(loadUsers())}>Load More</button>
+            {tab === TAB_HASH.ALL_USERS && (
+                <button onClick={() => dispatch(loadUsers())}>Load More</button>
+            )}
         </div>
     )
 }
