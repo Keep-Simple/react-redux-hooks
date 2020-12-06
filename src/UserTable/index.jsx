@@ -13,9 +13,6 @@ export default function UserTable() {
     const [isSelectedTab, setTab] = useState(false)
 
     const dispatch = useDispatch()
-    console.log(users)
-
-    useEffect(() => dispatch(loadUsers()), [])
 
     return (
         <div className={styles.content}>

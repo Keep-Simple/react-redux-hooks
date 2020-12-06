@@ -43,3 +43,5 @@ export const {
 } = mainSlice.actions
 
 sagaMiddleware.run(rootSaga)
+
+store.dispatch(loadUsers())
