@@ -1,8 +1,25 @@
-.header {
-    position: sticky;
-    height: 50px;
-    border: 2px solid black;
-    top: 0;
-    z-index: 10;
+.toolbar {
     display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 80%;
+    margin: 10px auto;
+    padding: 0 25px;
+    border-radius: 12px;
+    font-weight: 500;
+
+    color: #31a9f3;
+    background: #e6ecf0;
+    border-bottom: 1px solid #eeeef1;
+    backdrop-filter: blur(20px);
+
+    z-index: 2;
+
+    .toolbar-title {
+        margin: 20px 0;
+        font-size: 24px;
+        font-weight: 800;
+    }
 }

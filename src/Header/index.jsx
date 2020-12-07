@@ -14,9 +14,22 @@ export default function Header() {
     const showBackButton = location.pathname.length > 1
 
     return (
-        <header className={styles.header}>
-            {showBackButton && <Link to="/">Go Back</Link>}
-            {time + ' selected users: ' + selectedUsersCount}
+        <header className={styles.toolbar}>
+            <section>
+                {showBackButton && <Link to="/">Go Back</Link>}
+                {`${selectedUsersCount}  `}
+                <i className="users icon" />
+            </section>
+
+            <h1 className={styles['toolbar-title']}>
+                <i className="facebook messenger icon" />
+                Checky
+            </h1>
+
+            <section>
+                {`${time}  `}
+                <i className="clock icon" />
+            </section>
         </header>
     )
 }

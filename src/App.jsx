@@ -18,19 +18,21 @@ function App() {
                 <main>
                     <Header />
 
-                    <Switch>
-                        <Route path="/" exact>
-                            <UserTable />
-                        </Route>
+                    <div style={{ flexGrow: 1 }}>
+                        <Switch>
+                            <Route path="/" exact>
+                                <UserTable />
+                            </Route>
 
-                        <Route path="/user/:id">
-                            <UserDetails />
-                        </Route>
+                            <Route path="/user/:id">
+                                <UserDetails />
+                            </Route>
 
-                        <Route path="/">
-                            <WrongPage />
-                        </Route>
-                    </Switch>
+                            <Route path="/">
+                                <WrongPage />
+                            </Route>
+                        </Switch>
+                    </div>
 
                     <Footer />
                 </main>
