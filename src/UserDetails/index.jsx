@@ -8,5 +8,5 @@ export default function UserDetails() {
     const { id } = useParams()
     const user = useSelector((state) => selectUser(state, id))
 
-    return <div>{`User id = ${user.name.first}`}</div>
+    return <div>{`User name = ${user.name.first}`}</div>
 }

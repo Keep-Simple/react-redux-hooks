@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useHistory } from 'react-router-dom'
 
+import styles from './styles.module.scss'
 import UserCard from '../UserCard'
 
 export default function UserList({ users, selectUser }) {
@@ -9,7 +10,7 @@ export default function UserList({ users, selectUser }) {
     const handleUserNav = (id) => history.push(`/user/${id}`)
 
     return (
-        <div>
+        <div className={styles['card-list']}>
             {users.map(
                 ({
                     login: { uuid },

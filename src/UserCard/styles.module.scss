@@ -1,0 +1,21 @@
+// .author {
+//     color: rgb(45, 136, 193) !important;
+// }
+
+.card {
+    flex: 1 0 250px;
+    border-radius: 12px;
+    padding: 10px 25px;
+    margin: 9px;
+
+    background: #f8f9fa;
+    border: 2px solid rgba(34, 36, 38, 0.15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    cursor: pointer;
+
+    transition: all ease 100ms;
+}
+
+.card:hover {
+    transform: translateY(-7px) scale(1.05);
+}

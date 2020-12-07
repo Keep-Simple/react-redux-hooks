@@ -18,7 +18,7 @@ function App() {
                 <main>
                     <Header />
 
-                    <div style={{ flexGrow: 1 }}>
+                    <div className="main-content">
                         <Switch>
                             <Route path="/" exact>
                                 <UserTable />

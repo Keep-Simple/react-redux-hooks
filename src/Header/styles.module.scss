@@ -1,11 +1,16 @@
-.toolbar {
+.header {
+    position: fixed;
+    height: 70px;
+    top: 4px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
     display: flex;
-    position: sticky;
     align-items: center;
     justify-content: space-between;
 
     width: 80%;
-    margin: 10px auto;
     padding: 0 25px;
     border-radius: 12px;
     font-weight: 500;
@@ -17,7 +22,7 @@
 
     z-index: 2;
 
-    .toolbar-title {
+    .header-title {
         margin: 20px 0;
         font-size: 24px;
         font-weight: 800;
