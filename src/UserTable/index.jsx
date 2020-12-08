@@ -20,17 +20,16 @@ const TAB_HASH = {
 
 export default function UserTable() {
     const [tab, setTab] = useState(TAB_HASH.ALL_USERS)
-    const dispatch = useDispatch()
-
     const isLoading = useSelector(selectLoading)
-    const users = useSelector(
-        tab === TAB_HASH.ALL_USERS ? selectUsers : selectSelectedUsers
-    )
+    const users = useSelector(selectUsers)
+    const selectedUsers = useSelector(selectSelectedUsers)
 
+    const dispatch = useDispatch()
     const selectUser = (id) => dispatch(toggleUserSelect(id))
     const loadMore = () => dispatch(loadUsers())
 
     const tabProps = { current: tab, setTab }
+    const isAll = tab === TAB_HASH.ALL_USERS
 
     return (
         <div className={styles.content}>
@@ -39,7 +38,13 @@ export default function UserTable() {
                 <Tab name={TAB_HASH.SELECTED_USERS} {...tabProps} />
             </div>
 
-            <UserTab {...{ users, selectUser }} />
+            <UserTab
+                users={selectedUsers}
+                selectUser={selectUser}
+                hidden={isAll}
+            />
+
+            <UserTab users={users} selectUser={selectUser} hidden={!isAll} />
 
             {isLoading && <Loader />}
 

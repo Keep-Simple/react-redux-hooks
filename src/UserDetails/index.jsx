@@ -19,7 +19,7 @@ export default function UserDetails() {
     } = useSelector((state) => selectUser(state, id))
 
     return (
-        <profile className={styles.profile}>
+        <article className={styles.profile}>
             <img src={avatar} alt="avatar" />
             <section>
                 <h3>
@@ -36,6 +36,6 @@ export default function UserDetails() {
                 <h3>Age: {age}</h3>
                 <h3>Gender: {gender}</h3>
             </section>
-        </profile>
+        </article>
     )
 }

@@ -15,8 +15,12 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
+            {showBackButton && (
+                <Link to="/">
+                    <i className="backward icon" /> Return
+                </Link>
+            )}
             <section>
-                {showBackButton && <Link to="/">Go Back</Link>}
                 {`${selectedUsersCount}  `}
                 <i className="users icon" />
             </section>

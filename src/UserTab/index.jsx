@@ -4,11 +4,11 @@ import { useSearchInput } from '../utils/searchHook'
 import styles from './styles.module.scss'
 import UserList from '../UserList'
 
-export default function UserTab({ users, selectUser }) {
+export default function UserTab({ users, selectUser, hidden }) {
     const { filteredItems, ...handlers } = useSearchInput(users, filterFunc)
 
     return (
-        <section>
+        <section style={{ display: hidden ? 'none' : '' }}>
             <div className={styles['search-wrapper']}>
                 <span className={styles['search-input']}>
                     <input {...handlers} placeholder="  Search by name ..." />
