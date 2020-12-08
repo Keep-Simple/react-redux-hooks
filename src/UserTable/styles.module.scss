@@ -1,3 +1,41 @@
+@import '../constants/scssVariables.scss';
+
 .content {
     font-size: 16px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab {
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 2px solid $accent;
+}
+
+.load-more-button {
+    width: 200px;
+    font-weight: 600;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 9px;
+    border-radius: $radius;
+    border: 3px solid transparent;
+    background-color: $accent;
+    transition: 0.3s;
+
+    &:hover {
+        color: $accent;
+        background-color: #fff;
+        border: 3px solid $accent;
+        text-decoration: none;
+    }
 }

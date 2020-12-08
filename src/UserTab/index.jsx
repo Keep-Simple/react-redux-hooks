@@ -9,10 +9,12 @@ export default function UserTab({ users, selectUser }) {
 
     return (
         <section>
-            <span className={styles['search-input']}>
-                <input {...handlers} placeholder="  Search by name ..." />
-                <span></span>
-            </span>
+            <div className={styles['search-wrapper']}>
+                <span className={styles['search-input']}>
+                    <input {...handlers} placeholder="  Search by name ..." />
+                    <span></span>
+                </span>
+            </div>
 
             <UserList users={filteredItems} selectUser={selectUser} />
         </section>

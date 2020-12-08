@@ -1,3 +1,5 @@
+@import '../constants/scssVariables.scss';
+
 .header {
     position: fixed;
     height: 70px;
@@ -12,10 +14,10 @@
 
     width: 80%;
     padding: 0 25px;
-    border-radius: 12px;
+    border-radius: $radius;
     font-weight: 500;
 
-    color: #31a9f3;
+    color: $accent;
     background: #e6ecf0;
     border-bottom: 1px solid #eeeef1;
     backdrop-filter: blur(20px);

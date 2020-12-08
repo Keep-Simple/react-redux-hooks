@@ -32,9 +32,9 @@ function App() {
                                 <WrongPage />
                             </Route>
                         </Switch>
-                    </div>
 
-                    <Footer />
+                        <Footer />
+                    </div>
                 </main>
             </Router>
         </Provider>
