@@ -9,21 +9,23 @@ export default function UserList({ users, selectUser }) {
     const history = useHistory()
     const handleUserNav = (id) => history.push(`/user/${id}`)
 
+    console.log(users)
     return (
         <div className={styles['card-list']}>
             {users.map(
                 ({
-                    login: { uuid },
+                    login: { uuid, username },
                     name,
-                    picture: { thumbnail },
+                    picture: { large },
                     selectTime,
                 }) => (
                     <UserCard
                         key={uuid}
                         id={uuid}
-                        avatar={thumbnail}
+                        avatar={large}
                         firstName={name.first}
                         lastName={name.last}
+                        userName={username}
                         selectTime={selectTime}
                         onButtonClick={(e) => {
                             e.stopPropagation()

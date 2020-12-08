@@ -12,21 +12,22 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 80%;
-    padding: 0 25px;
+    width: 95%;
+    padding: 0 35px;
     border-radius: $radius;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 17px;
 
     color: $accent;
     background: #e6ecf0;
     border-bottom: 1px solid #eeeef1;
     backdrop-filter: blur(20px);
 
-    z-index: 2;
+    z-index: 5;
 
     .header-title {
         margin: 20px 0;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 800;
     }
 }

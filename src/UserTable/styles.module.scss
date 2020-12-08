@@ -11,10 +11,11 @@
 
 .tab {
     cursor: pointer;
+    font-size: 19px;
 }
 
 .active {
-    border-bottom: 2px solid $accent;
+    border-bottom: 4px solid $accent;
 }
 
 .load-more-button {

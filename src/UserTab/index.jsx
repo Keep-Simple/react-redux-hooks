@@ -22,8 +22,11 @@ export default function UserTab({ users, selectUser }) {
 }
 
 function filterFunc(query, users) {
+    query = query.toLowerCase()
+
     return users.filter(
         ({ name: { first, last } }) =>
-            first.includes(query) || last.includes(query)
+            first.toLowerCase().includes(query) ||
+            last.toLowerCase().includes(query)
     )
 }
