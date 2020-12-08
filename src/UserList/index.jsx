@@ -3,7 +3,6 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 
 import styles from './styles.module.scss'
-import './transitions.css'
 import UserCard from '../UserCard'
 
 export default function UserList({ users, selectUser }) {
