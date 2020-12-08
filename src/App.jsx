@@ -15,27 +15,25 @@ function App() {
     return (
         <Provider {...{ store }}>
             <Router>
-                <main>
-                    <Header />
+                <Header />
 
-                    <div className="main-content">
-                        <Switch>
-                            <Route path="/" exact>
-                                <UserTable />
-                            </Route>
+                <div className="main-content">
+                    <Switch>
+                        <Route path="/" exact>
+                            <UserTable />
+                        </Route>
 
-                            <Route path="/user/:id">
-                                <UserDetails />
-                            </Route>
+                        <Route path="/user/:id">
+                            <UserDetails />
+                        </Route>
 
-                            <Route path="/">
-                                <WrongPage />
-                            </Route>
-                        </Switch>
+                        <Route path="/">
+                            <WrongPage />
+                        </Route>
+                    </Switch>
+                </div>
 
-                        <Footer />
-                    </div>
-                </main>
+                <Footer />
             </Router>
         </Provider>
     )
